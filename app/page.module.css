@@ -1,0 +1,146 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+}
+
+.card {
+  text-align: center;
+  max-width: 600px;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dekorativt element */
+.ornament {
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-md);
+  opacity: 0.7;
+}
+
+/* Navn */
+.name {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 10vw, 5rem);
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-xs);
+  line-height: 1.1;
+}
+
+/* Tittel */
+.title {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* Skillelinje */
+.divider {
+  width: 60px;
+  height: 1px;
+  background-color: var(--color-border);
+  border: none;
+  margin: var(--spacing-lg) auto;
+}
+
+/* Intro-tekst */
+.intro {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Kontaktlenker */
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.link {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-accent);
+  transition: width 0.3s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+.separator {
+  color: var(--color-border);
+  user-select: none;
+}
+
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: var(--spacing-md);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  opacity: 0.6;
+}
+
+/* Responsiv */
+@media (max-width: 600px) {
+  .main {
+    padding: var(--spacing-sm);
+  }
+  
+  .divider {
+    margin: var(--spacing-md) auto;
+  }
+  
+  .intro {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .footer {
+    position: relative;
+    margin-top: var(--spacing-xl);
+    bottom: auto;
+    left: auto;
+    transform: none;
+  }
+}
