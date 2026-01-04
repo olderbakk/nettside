@@ -10,7 +10,6 @@ const diatype = localFont({
       style: "normal",
     },
   ],
-  variable: "--font-diatype",
   display: "swap",
 });
 
@@ -26,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="no">
-      <body className={diatype.variable}>
+      <body className={diatype.className}>
         {children}
       </body>
     </html>
