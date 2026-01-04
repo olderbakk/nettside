@@ -1,5 +1,6 @@
 import styles from "./page.module.css";
 import Image from "next/image";
+import heroImage from "../public/image.webp";
 
 export default function Home() {
   return (
@@ -34,11 +35,12 @@ export default function Home() {
       {/* Høyre kolonne - bilde */}
       <div className={styles.right}>
         <Image
-          src="/image.webp"
+          src={heroImage}
           alt="Foto"
           fill
           className={styles.image}
-          priority
+          placeholder="blur"
+          sizes="50vw"
         />
       </div>
     </main>
