@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Libre_Baskerville } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-heading",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-});
-
-const baskerville = Libre_Baskerville({
-  variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["400", "700"],
+const diatype = localFont({
+  src: [
+    {
+      path: "./fonts/ABCDiatype-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-diatype",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="no">
-      <body className={`${cormorant.variable} ${baskerville.variable}`}>
+      <body className={diatype.variable}>
         {children}
       </body>
     </html>
