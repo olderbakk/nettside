@@ -14,8 +14,8 @@ const diatype = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Olderbakk — Designer",
-  description: "Designer basert i Norge",
+  title: "Elias Olderbakk",
+  description: "Designer based in Oslo",
 };
 
 export default function RootLayout({
