@@ -10,7 +10,7 @@ export default function Home() {
         <p className={styles.bio}>
           Elias Olderbakk is a designer and teacher based in Oslo. 
           He is founding partner of{" "}
-          <a href="https://travers.as" target="_blank" rel="noopener noreferrer" className={styles.bioLink}>
+          <a href="http://travers.as" target="_blank" rel="noopener noreferrer" className={styles.bioLink}>
             Travers
           </a>
           , and assistant professor at{" "}
