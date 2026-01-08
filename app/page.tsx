@@ -8,7 +8,7 @@ export default function Home() {
       {/* Venstre kolonne */}
       <div className={styles.left}>
         <p className={styles.bio}>
-          Elias Olderbakk is a designer and teacher based in Oslo. 
+          Elias Olderbakk is a designer  based in Oslo. 
           He is founding partner of{" "}
           <a href="//travers.as" target="_blank" rel="noopener noreferrer" className={styles.bioLink}>
             Travers
