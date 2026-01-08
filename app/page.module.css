@@ -44,6 +44,10 @@
   color: #ccc;
 }
 
+.bio:has(.bioLink:hover) .bioLink {
+  color: #ccc;
+}
+
 .bio:has(.bioLink:hover) .bioLink:hover {
   color: #000;
 }
