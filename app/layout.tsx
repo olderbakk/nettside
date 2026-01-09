@@ -16,6 +16,14 @@ const diatype = localFont({
 export const metadata: Metadata = {
   title: "Elias Olderbakk",
   description: "Designer based in Oslo",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    apple: "/apple-icon-180x180.png",
+  },
 };
 
 export default function RootLayout({
