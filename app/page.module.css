@@ -1,131 +1,99 @@
 .main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.backgroundImage {
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: var(--spacing-lg);
+  color: white;
+}
+
+.textBlock {
+  margin-top: auto;
+  max-width: 800px;
 }
 
 /* Fade in animasjon */
 @keyframes fadeIn {
   from {
     opacity: 0;
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* Venstre kolonne */
-.left {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: var(--spacing-lg);
+.title {
+  font-size: clamp(3rem, 10vw, 7rem);
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 0.3em;
+  animation: fadeIn 1s ease-out both;
+  text-shadow: 0 2px 40px rgba(0, 0, 0, 0.3);
 }
 
-.bio {
-  font-size: 1.4rem;
-  line-height: 1.5;
-  max-width: 480px;
-  transition: color 0.2s ease;
-  animation: fadeIn 0.8s ease-out both;
+.subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.4;
+  max-width: 600px;
+  opacity: 0.9;
+  animation: fadeIn 1s ease-out 0.2s both;
+  text-shadow: 0 1px 20px rgba(0, 0, 0, 0.3);
 }
 
-.bioLink {
-  color: #888;
-  transition: color 0.2s ease;
+.subtitle a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s ease;
 }
 
-.bioLink:hover {
-  color: #000;
+.subtitle a:hover {
+  opacity: 0.7;
 }
 
-/* Når man hovrer på en lenke, fade resten av teksten */
-.bio:has(.bioLink:hover) {
-  color: #ccc;
+.footer {
+  padding-top: var(--spacing-lg);
+  font-size: 0.9rem;
+  opacity: 0.7;
+  animation: fadeIn 1s ease-out 0.4s both;
 }
 
-.bio:has(.bioLink:hover) .bioLink {
-  color: #ccc;
+.footer a {
+  transition: opacity 0.2s ease;
 }
 
-.bio:has(.bioLink:hover) .bioLink:hover {
-  color: #000;
-}
-
-/* Kontakt nederst */
-.contact {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  animation: fadeIn 0.8s ease-out 0.2s both;
-}
-
-.contactRow {
-  display: flex;
-  align-items: baseline;
-  gap: 1rem;
-  font-size: 1.5rem;
-}
-
-.label {
-  transition: color 0.2s ease;
-}
-
-.value {
-  color: var(--color-text-muted);
-  opacity: 0;
-  transform: translateX(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.contactRow:hover .label {
-  color: var(--color-text-muted);
-}
-
-.contactRow:hover .value {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Høyre kolonne - bilde */
-.right {
-  position: relative;
-  overflow: hidden;
-}
-
-.image {
-  object-fit: cover;
+.footer a:hover {
+  opacity: 0.6;
 }
 
 /* Responsiv - mobil */
 @media (max-width: 768px) {
-  .main {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr auto;
-  }
-  
-  .left {
-    order: 1;
+  .content {
     padding: var(--spacing-md);
-    min-height: 50vh;
   }
   
-  .right {
-    order: 2;
-    min-height: 50vh;
+  .title {
+    font-size: 2.5rem;
   }
   
-  .bio {
-    font-size: 1.2rem;
-  }
-  
-  .contactRow {
-    font-size: 1.2rem;
-  }
-  
-  /* På mobil, vis alltid verdiene */
-  .value {
-    opacity: 1;
-    transform: translateX(0);
+  .subtitle {
+    font-size: 1rem;
   }
 }

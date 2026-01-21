@@ -1,11 +1,10 @@
 :root {
-  --color-bg: #ffffff;
-  --color-text: #1a1a1a;
-  --color-text-muted: #5a5a5a;
+  --color-bg: #1a1a1a;
+  --color-text: #ffffff;
   
   --spacing-sm: 1rem;
-  --spacing-md: 2rem;
-  --spacing-lg: 3rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2.5rem;
 }
 
 *,
