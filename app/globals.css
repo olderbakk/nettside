@@ -1,6 +1,7 @@
 :root {
-  --color-bg: #1a1a1a;
-  --color-text: #ffffff;
+  --color-bg: #ffffff;
+  --color-text: #000000;
+  --color-text-muted: #888888;
   
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
