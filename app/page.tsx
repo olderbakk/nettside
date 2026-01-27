@@ -5,18 +5,7 @@ import heroImage from "../public/image.webp";
 export default function Home() {
   return (
     <main className={styles.main}>
-      {/* Fullskjerms bakgrunnsbilde */}
-      <Image
-        src={heroImage}
-        alt=""
-        fill
-        className={styles.backgroundImage}
-        placeholder="blur"
-        sizes="100vw"
-        priority
-      />
-      
-      {/* Innhold over bildet */}
+      {/* Venstre side - tekst */}
       <div className={styles.content}>
         <div className={styles.textBlock}>
           <h1 className={styles.title}>Elias Olderbakk</h1>
@@ -36,6 +25,19 @@ export default function Home() {
         <footer className={styles.footer}>
           <a href="mailto:elias@olderbakk.no">elias@olderbakk.no</a>
         </footer>
+      </div>
+
+      {/* Høyre side - bilde */}
+      <div className={styles.imageContainer}>
+        <Image
+          src={heroImage}
+          alt=""
+          fill
+          className={styles.heroImage}
+          placeholder="blur"
+          sizes="50vw"
+          priority
+        />
       </div>
     </main>
   );
