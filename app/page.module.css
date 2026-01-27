@@ -1,23 +1,10 @@
 .main {
-  display: flex;
-  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   min-height: 100vh;
 }
 
-.content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: var(--spacing-lg);
-  background-color: #fff;
-}
-
-.textBlock {
-  max-width: 500px;
-}
-
-/* Fade in animasjon - kun opacity */
+/* Fade in animasjon */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -27,89 +14,117 @@
   }
 }
 
-.title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 400;
-  line-height: 1;
-  margin-bottom: 0.5em;
-  animation: fadeIn 1s ease-out both;
-  color: #000;
+/* Venstre kolonne */
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--spacing-lg);
 }
 
-.subtitle {
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
-  font-weight: 400;
+.bio {
+  font-size: 1.4rem;
   line-height: 1.5;
-  color: #000;
-  animation: fadeIn 1s ease-out 0.2s both;
+  max-width: 480px;
   transition: color 0.3s ease;
+  animation: fadeIn 0.8s ease-out both;
 }
 
-.subtitle:has(a:hover) {
-  color: #bbb;
-}
-
-.subtitle a {
-  color: #000;
+.bioLink {
+  color: inherit;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.subtitle:has(a:hover) a:not(:hover) {
+/* Når man hovrer på en lenke, dim resten til lys grå */
+.bio:has(.bioLink:hover) {
   color: #bbb;
 }
 
-.subtitle a:hover {
+.bio:has(.bioLink:hover) .bioLink:hover {
   color: #000;
 }
 
-.imageContainer {
-  flex: 1;
+.bio:has(.bioLink:hover) .bioLink:not(:hover) {
+  color: #bbb;
+}
+
+/* Kontakt nederst */
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  animation: fadeIn 0.8s ease-out 0.2s both;
+}
+
+.contactRow {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.label {
+  transition: color 0.2s ease;
+}
+
+.value {
+  color: var(--color-text-muted);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.contactRow:hover .label {
+  color: var(--color-text-muted);
+}
+
+.contactRow:hover .value {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Høyre kolonne - bilde */
+.right {
   position: relative;
   overflow: hidden;
 }
 
-.heroImage {
+.image {
   object-fit: cover;
-  object-position: center;
-}
-
-.footer {
-  padding-top: var(--spacing-lg);
-  font-size: 0.9rem;
-  animation: fadeIn 1s ease-out 0.4s both;
-}
-
-.footer a {
-  color: #000;
-  text-decoration: none;
-  opacity: 0.6;
-  transition: opacity 0.2s ease;
-}
-
-.footer a:hover {
-  opacity: 1;
 }
 
 /* Responsiv - mobil */
 @media (max-width: 768px) {
   .main {
-    flex-direction: column-reverse;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
   }
-
-  .content {
+  
+  .left {
+    order: 1;
     padding: var(--spacing-md);
+    min-height: 50vh;
   }
   
-  .imageContainer {
-    height: 50vh;
+  .right {
+    order: 2;
+    min-height: 50vh;
   }
   
-  .title {
-    font-size: 2rem;
+  .bio {
+    font-size: 1.2rem;
   }
   
-  .subtitle {
-    font-size: 1rem;
+  .contactRow {
+    font-size: 1.2rem;
+  }
+  
+  /* På mobil, vis alltid verdiene */
+  .value {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
