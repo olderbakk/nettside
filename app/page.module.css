@@ -100,26 +100,27 @@
 @media (max-width: 768px) {
   .main {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: 50vh 50vh;
+    height: 100vh;
+    overflow: hidden;
   }
   
   .left {
     order: 1;
     padding: var(--spacing-md);
-    min-height: 50vh;
+    overflow: hidden;
   }
   
   .right {
     order: 2;
-    min-height: 50vh;
   }
   
   .bio {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
   
   .contactRow {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
   
   /* På mobil, vis alltid verdiene */
