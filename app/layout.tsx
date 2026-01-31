@@ -14,7 +14,7 @@ const diatype = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Elias Olderbakk",
+  title: "Elias Bjørnson Olderbakk",
   description: "Designer based in Oslo",
   icons: {
     icon: [
